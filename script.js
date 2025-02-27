@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle Form Submission
     form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent default form submission
-        spinner.style.display = "block"; // Show loading spinner
+        e.preventDefault();
+        spinner.style.display = "block";
 
         let formData = new FormData(form);
 
@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json())
         .then(data => {
-            spinner.style.display = "none"; // Hide spinner
+            spinner.style.display = "none";
             if (data.success) {
                 formMessage.innerHTML = "<p style='color: green;'>✅ Message sent successfully!</p>";
-                form.reset(); // Reset form fields
+                form.reset();
             } else {
                 formMessage.innerHTML = "<p style='color: red;'>❌ Failed to send message. Try again.</p>";
             }
@@ -34,10 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Dark Mode Toggle
     themeToggle.addEventListener("click", function () {
         document.body.classList.toggle("dark-mode");
-        if (document.body.classList.contains("dark-mode")) {
-            themeToggle.innerText = "☀️";
-        } else {
-            themeToggle.innerText = "🌙";
-        }
+        themeToggle.innerText = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
     });
 });
