@@ -1,0 +1,44 @@
+<!-- 43c58f5f-d942-4edc-a4dc-db700314c1e3 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Contact Us</h2>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle">🌙</button>
+
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="43c58f5f-d942-4edc-a4dc-db700314c1e3">
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <!-- Loading Spinner -->
+            <div id="loading-spinner"></div>
+
+            <!-- Success/Error Message -->
+            <div id="form-message"></div>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
